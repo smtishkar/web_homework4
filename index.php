@@ -1,5 +1,29 @@
 <?php
 
+$name = 'Антон';
+$job = 'Рабочий';
+$phone = '24213';
+$city = 'Москва';
+$mail = 'sdsa@fsa.gf';
+$skills = [
+    [
+        'name' => 'Фотошоп',
+        'percent' => 30,
+    ],
+    [
+        'name' => 'Иллюстратор',
+        'percent' => 70,
+    ],
+    [
+        'name' => 'Медиа',
+        'percent' => 40,
+    ],
+    [
+        'name' => 'Скил',
+        'percent' => 60,
+    ],
+];
+
 $experience = [
     [
     'job title' => 'Manager',   
@@ -59,36 +83,25 @@ $experience = [
             <img src="https://imgfon.ru/Images/Details_img_880px/Animals/glaza-belyy_fon-kotik-morda-polosatyy.webp"
               style="width:100%" alt="Avatar">
             <div class="w3-display-bottomleft w3-container w3-text-black">
-              <h2>Имя</h2>
+              <h2><?= $name?></h2>
             </div>
           </div>
           <div class="w3-container">
-            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Профессия</p>
-            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Город, страна</p>
-            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>E-mail</p>
-            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Телефон</p>
+            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i><?= $job?></p>
+            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i><?= $phone?></p>
+            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><?= $city?></p>
+            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><?= $mail?></p>
  
             <hr>
  
             <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Навыки</b></p>
-            <p>Adobe Photoshop</p>
+            <?php foreach($skills as $s): ?>
+                <p><?php echo $s ['name']?></p>
             <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:<?php echo $s ['percent']?>%"><?php echo $s ['percent']?>%$</div>
             </div>
-            <p>Photography</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-                <div class="w3-center w3-text-white">80%</div>
-              </div>
-            </div>
-            <p>Illustrator</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-            </div>
-            <p>Media</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-            </div>
+            <?php endforeach; ?>
+    
             <br>
  
             <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Языки</b>
